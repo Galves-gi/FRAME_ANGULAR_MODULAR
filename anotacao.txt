@@ -1,0 +1,94 @@
+routes:
+
+{
+  path: '',
+  loadChildren: () =>
+    import('./features/feed/feed.module').then(m => m.FeedModule)
+}
+
+
+- loadChildren
+
+Essa propriedade indica Lazy Loading.
+
+👉 Angular NÃO carrega o módulo imediatamente
+👉 Ele só carrega quando a rota é acessada
+
+📌 Benefícios:
+✔ Performance
+✔ Menor bundle inicial
+✔ Escalabilidade
+
+
+- import('./features/feed/feed.module')
+
+Isso é um import dinâmico (JavaScript moderno).
+Diferente de import { FeedModule } from ...
+Só busca o arquivo quando necessário
+
+- .then(m => m.FeedModule)
+
+    - m é o módulo importado
+    - Retorna qual módulo Angular será carregado
+
+👉 Angular precisa disso para:
+    - Registrar componentes
+    - Registrar rotas internas do módulo
+
+-----------------------------------------------------------
+
+ngModule e arquitetura modular no angular 17
+1- 
+no module pai:
+
+@NgModule({
+  declarations: [declaraComponente],
+  imports: [
+    CommonModule,
+    RouterModule
+  ],
+  exports: [exportaComponente]
+})
+export class SharedModule {}
+
+2-
+app componentes
+
+importa o module pai que quero exibir os componentes filhos
+
+app.component.ts
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { SharedModule } from './shared/shared.module';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [
+    RouterOutlet,
+    paiModule   // 👈 AQUI
+  ],
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {}
+
+3-
+Desativar o Standalone padrão do angular
+vai em: tsconfig.app.json
+
+adiciona:
+  "angularCompilerOptions": {
+    "strictStandalone": false
+  }
+
+
+✔ Angular 17 não cria AppModule
+✔ Arquitetura modular continua existindo
+✔ Shared / Core / Features usam NgModule
+✔ Root pode ser standalone
+✔ AppComponent importa SharedModule
+✔ Nada fica “solto”
+
+
+-------------------------------------------------------------

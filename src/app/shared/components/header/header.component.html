@@ -1,0 +1,14 @@
+<header>
+    <a routerLink="/">
+        <img src="/assets/logo.png" alt="logo escrito FRAME" class="logo">
+    </a>
+
+    <nav [class.menu-aberto]="menuAberto">
+        <input type="text" placeholder="Buscar fotos...">
+        <a routerLink="/">Home</a>
+        <a routerLink="/share">Compartilhar</a>
+    </nav>
+    <button class="btn-menu" (click)="ativarMenu()">
+        <img src="/assets/svg/menu-burger.svg" alt="imagem para o botão do menu para celulares">
+    </button>
+</header>
