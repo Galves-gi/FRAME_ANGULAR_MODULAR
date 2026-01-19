@@ -1,0 +1,67 @@
+/* formulário */
+.form {
+  max-width: 400px;
+  margin: 4rem auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  background: #fff;
+  color: #000;
+  border: 1px solid #000;
+}
+
+/* Quadrado de upload */
+.carregar-imagem {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+
+  border: 2px dashed #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Esconder o input */
+.carregar-imagem input[type="file"] {
+  display: none;
+}
+
+/* Estilo do "+" */
+.carregar-imagem label {
+  font-size: 3rem;
+  font-weight: 300;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Label normal */
+.form label {
+  font-size: 0.9rem;
+}
+
+/* Textarea */
+.form textarea {
+  min-height: 100px;
+  padding: 0.75rem;
+  border: 1px solid #000;
+  resize: vertical;
+  font-family: inherit;
+}
+
+/* Botão */
+.form button {
+  padding: 0.75rem;
+  border: 1px solid #000;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.form button:hover {
+  background: #fff;
+  color: #000;
+}

@@ -3,6 +3,9 @@
     margin: 0;
     box-sizing: border-box;
 }
+body{
+    background-color: rgb(234, 228, 228);
+}
 a{
     text-decoration: none;
     color: white;

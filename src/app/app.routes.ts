@@ -15,6 +15,6 @@ export const routes: Routes = [
     },
     {
         path: '**',
-        loadChildren:()=> import('./features/feed/feed.module').then(m=> m.FeedModule)
+        loadChildren:()=> import('./features/not-found/not-found.module').then(m=> m.NotFoundModule)
     },
 ];
