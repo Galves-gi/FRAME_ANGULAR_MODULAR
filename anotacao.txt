@@ -49,7 +49,7 @@ no module pai:
   ],
   exports: [exportaComponente]
 })
-export class SharedModule {}
+export class paiModule {}  // 👈 AQUI
 
 2-
 app componentes
@@ -59,7 +59,7 @@ importa o module pai que quero exibir os componentes filhos
 app.component.ts
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { SharedModule } from './shared/shared.module';
+import { paiModule } from './shared/shared.module';
 
 @Component({
   selector: 'app-root',
@@ -92,3 +92,40 @@ adiciona:
 
 
 -------------------------------------------------------------
+
+core:  Interceptor
+
+
+- HTTP Interceptor
+
+Supervisona as requisições http, tudo que for sair, as respostas que recebe e tudo que chega no componentes
+
+Component / Service
+        ↓
+   Interceptor(s)
+        ↓
+      API
+        ↓
+   Interceptor(s)
+        ↓
+Component / Service
+
+
+- Interceptor de LOADING
+
+Como funciona
+1️⃣ Requisição inicia → mostra loading
+2️⃣ Requisição termina (success ou error) → esconde loading
+
+
+Estrutura
+
+core/
+├── interceptors/
+│   ├── loading.interceptor.ts
+│   └── error.interceptor.ts
+
+
+- Interceptor de ERRO
+
+tratamento global de erro

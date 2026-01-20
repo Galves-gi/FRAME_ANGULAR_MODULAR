@@ -3,8 +3,8 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 2em 4.5em;
-    background-color: black;
-    color: white;
+    background-color:var(--cor-preto);
+    color: var(--cor-branco);
     position: sticky;
     top: 0;
 }
@@ -17,23 +17,23 @@ nav {
     display: flex;
     align-items: center;
     gap: 1em;
-    color: white;
+    color: var(--cor-branco);
     padding: 0;
     margin: 0;
 }
 
 nav a:active,
 nav a:hover {
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid var(--cor-branco);
 }
 
 nav input {
     width: 30vw;
-    color: white;
-    padding: .5em 1em;
+    color: var(--cor-branco);
+    padding: .3em 1em;
     border-radius: 30px;
-    border: 1px solid white;
-    background-color: rgb(44, 36, 36);
+    border: 1px solid var(--cor-branco);;
+    background-color: var(--cor-preto-apoio);
 }
 
 .btn-menu {
@@ -55,7 +55,7 @@ nav input {
         position: absolute;
         top: 60px;
         right: 0;
-        background-color: black;
+        background-color: var(--cor-preto);
         padding: 1em;
         display: none;
     }
