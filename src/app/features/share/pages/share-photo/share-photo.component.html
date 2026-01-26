@@ -1,15 +1,29 @@
-<form>
+<app-message></app-message>
+<form (ngSubmit)="submit()" [formGroup]="inputForm">
+
+  <!-- input para carregar a imagem -->
   <div class="carregar-imagem">
-    <label for="imagem">+</label>
-    <input type="file" id="imagem" required>
+    <label for="image">+</label>
+    <input type="file" id="image" hidden (change)="onFileSelected($event)">
   </div>
 
-  <label for="texto">Descrição:</label>
-  <textarea id="texto" name="texto" placeholder="Descreva seu momento:" required></textarea>
+  <!-- input para colocar a descrição -->
+  <label for="text">Descrição:</label>
+  <textarea id="text" name="text" placeholder="Descreva seu momento:" formControlName="text" required></textarea>
 
-  <label for="hashtag">Hashtag</label>
-  <input type="text" id="hashtag" required>
+  <!-- mensagem de validação -- descricao -->
+  <div *ngIf="text.invalid" class="mensagem-validacao">
+    <p *ngIf="text.errors ?. ['required']">A descrição é obrigatória!</p>
+  </div>
 
+  <!-- input para colocar as hashtag -->
+  <label for="hashtag">Hashtag:</label>
+  <input type="text" id="hashtag" formControlName="hashtag" required>
+
+  <!-- mensagem de validação -- hashtag -->
+  <div *ngIf="hashtag.invalid" class="mensagem-validacao">
+    <p *ngIf="hashtag.errors ?. ['required']">A hashtag é obrigatória!</p>
+  </div>
 
   <button type="submit">Enviar</button>
 </form>

@@ -48,9 +48,11 @@ nav input {
 
 @media (max-width:760px) {
     header {
-        padding: 0.5em 1em;
+        padding: 0.3em 1em;
     }
-
+    header img{
+        max-width: 100%;
+    }
     nav {
         position: absolute;
         top: 60px;

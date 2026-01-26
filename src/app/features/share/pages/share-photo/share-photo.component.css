@@ -9,7 +9,6 @@ form {
 
   background: var(--cor-branco);
   color: var(--cor-preto);
-  border: 1px solid var(--cor-preto);
 }
 
 /* Quadrado de upload */
@@ -45,7 +44,6 @@ form label {
 /* Textarea */
 form textarea {
   min-height: 130px;
-  border: 1px solid var(--cor-preto);
   resize: vertical;
   font-family: inherit;
 }
@@ -65,4 +63,10 @@ form button {
 form button:hover {
   background: var(--cor-branco-apoio);;
   color: var(--cor-preto);
+}
+
+@media (max-width:760px) {
+  form{
+    border: none;
+  }
 }

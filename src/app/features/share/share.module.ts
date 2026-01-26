@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { ShareRoutingModule } from './share-routing.module';
 import { SharePhotoComponent } from './pages/share-photo/share-photo.component';
+import { ShareService } from './services/share.service';
+import { SharedModule } from "../../shared/shared.module";
 
 
 @NgModule({
@@ -13,7 +15,10 @@ import { SharePhotoComponent } from './pages/share-photo/share-photo.component';
     CommonModule,
     ShareRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    SharedModule
+],
+    providers: [
+    ShareService
   ]
 })
 export class ShareModule { }

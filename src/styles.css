@@ -33,7 +33,7 @@ body {
         Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif;
 
     line-height: 1.5;
-    background-color:var(--cor-branco);
+    background-color: var(--cor-branco);
     color: var(--color-preto);
 
     -webkit-font-smoothing: antialiased;
@@ -55,6 +55,7 @@ textarea,
 select {
     font: inherit;
     padding: 0.75rem;
+    border: 1px solid var(--cor-preto);
 }
 
 
@@ -94,4 +95,12 @@ input,
 textarea,
 select {
     -webkit-tap-highlight-color: transparent;
+}
+
+
+/* estilo global */
+.mensagem-validacao p{
+    color: rgb(168, 5, 5);
+    border-left: 3px solid red;
+    padding-left: .5em;
 }
