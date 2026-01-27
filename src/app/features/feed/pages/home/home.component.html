@@ -1,1 +1,13 @@
-<p>home works!</p>
+<!-- <h1 class="titulo-centro">Galeria</h1> -->
+
+<section class="galeria">
+
+    <div *ngIf="filteredPhotos.length === 0" class="titulo-centro">
+        Nenhuma imagem emcontrada!
+    </div>
+    
+    <div class="galeria-img" *ngFor="let photo of filteredPhotos">
+        <img [src]="photo.image" [alt]="photo.text">
+    </div>
+
+</section>

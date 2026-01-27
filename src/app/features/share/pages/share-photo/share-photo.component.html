@@ -1,11 +1,14 @@
 <app-message></app-message>
+<h1 class="titulo-centro">Compartilha um momento:</h1>
 <form (ngSubmit)="submit()" [formGroup]="inputForm">
 
   <!-- input para carregar a imagem -->
-  <div class="carregar-imagem">
+  <!--   <div class="carregar-imagem">
     <label for="image">+</label>
     <input type="file" id="image" hidden (change)="onFileSelected($event)">
-  </div>
+  </div> -->
+  <label for="image">Escolhe uma imagem:</label>
+  <input type="file" id="image" (change)="onFileSelected($event)">
 
   <!-- input para colocar a descrição -->
   <label for="text">Descrição:</label>

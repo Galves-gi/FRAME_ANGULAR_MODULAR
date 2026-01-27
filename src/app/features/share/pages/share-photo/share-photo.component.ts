@@ -48,6 +48,7 @@ export class SharePhotoComponent implements OnInit{
 
   submit(){
     if (this.inputForm.invalid || !this.selectedFile) {
+      this.messageService.show('Preenche os campos!')
       return
     }
 

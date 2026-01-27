@@ -104,3 +104,7 @@ select {
     border-left: 3px solid red;
     padding-left: .5em;
 }
+.titulo-centro{
+    text-align: center;
+    margin-top: 1em;
+}

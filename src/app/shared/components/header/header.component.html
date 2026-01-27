@@ -4,10 +4,11 @@
     </a>
 
     <nav [class.menu-aberto]="menuAberto">
-        <input type="text" placeholder="Buscar fotos...">
+        <input type="text" placeholder="Buscar fotos..." (input)="onSearch($event)">
         <a routerLink="/">Home</a>
         <a routerLink="/share">Compartilhar</a>
     </nav>
+
     <button class="btn-menu" (click)="ativarMenu()">
         <img src="/assets/svg/menu-burger.svg" alt="imagem para o botão do menu para celulares">
     </button>

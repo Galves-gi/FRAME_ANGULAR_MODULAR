@@ -19,7 +19,9 @@ export interface Comment{
     updated_at?: string;
 }
 
-export interface Response<T>{
-    message?: string;
-    data: T;
+export interface Photo {
+    id?: string;
+    image: string;
+    text: string;
+    hashtag?: string;
 }

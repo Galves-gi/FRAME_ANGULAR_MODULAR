@@ -1,0 +1,43 @@
+.galeria {
+  column-count: 4;
+  column-gap: 16px;
+  padding: 1em;
+}
+
+/* Card */
+.galeria-img {
+  background: #fff;
+  margin-bottom: 16px;
+  border-radius: 16px;
+  overflow: hidden;
+  break-inside: avoid;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.galeria-img:hover {
+  transform: translateY(-4px);
+}
+
+.galeria-img img {
+  width: 100%;
+  display: block;
+}
+
+@media (max-width: 1200px) {
+  .galeria{
+    column-count: 3;
+  }
+}
+
+@media (max-width: 768px) {
+  .galeria{
+    column-count: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .galeria {
+    column-count: 1;
+  }
+}
