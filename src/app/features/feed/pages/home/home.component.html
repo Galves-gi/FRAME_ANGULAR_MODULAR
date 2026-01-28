@@ -6,8 +6,13 @@
         Nenhuma imagem emcontrada!
     </div>
     
-    <div class="galeria-img" *ngFor="let photo of filteredPhotos">
+    <div 
+    class="galeria-img" 
+    *ngFor="let photo of filteredPhotos"
+    [routerLink]="['/detail', photo.id]"
+    >
         <img [src]="photo.image" [alt]="photo.text">
+
     </div>
 
 </section>

@@ -45,6 +45,8 @@ picture,
 video,
 canvas,
 svg {
+    padding: 0;
+    margin: 0;
     display: block;
     max-width: 100%;
 }

@@ -1,0 +1,26 @@
+.foto-detalhe{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.foto-detalhe img{
+    max-width: 20em;
+    margin-bottom: .5em;
+}
+
+.foto-detalhe div{
+    width: 100%;
+    max-width: 20em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.foto-detalhe p{
+    width: 100%;
+    max-width: 20em;
+    text-align: start;
+}
