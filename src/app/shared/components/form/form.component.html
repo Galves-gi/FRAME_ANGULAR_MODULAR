@@ -1,0 +1,18 @@
+<form (ngSubmit)="submit()" *ngIf="form" [formGroup]="form">
+
+  <div *ngIf="form.value.image" class="imagem-previa">
+    <img [src]="form.value.image" width="200" alt="Prévia da foto" />
+  </div>
+
+  <label>URL da Imagem:</label>
+  <input type="text" placeholder="Cole aqui o link da imagem" formControlName="image" />
+
+  <label>Descrição:</label>
+  <textarea formControlName="text"></textarea>
+
+  <label>Hashtag:</label>
+  <input formControlName="hashtag" />
+
+  <button type="submit">Salvar</button>
+
+</form>

@@ -3,13 +3,14 @@
     <img [src]="photo.image" alt="">
 
     <div>
-        <a href="/detail/comentario/{{ photo.id }}">
+        <a routerLink="/detail/comentario/{{ photo.id }}">
             <fa-icon [icon]="faComment"></fa-icon> Comentar
         </a>
 
-        <a href="/detail/edit/{{ photo.id }}">
+        <a routerLink="/detail/edit/{{ photo.id }}">
             <fa-icon [icon]="faEdit"></fa-icon> Editar
         </a>
+        
 
         <button (click)="removeHandler(photo.id!)">
             <fa-icon [icon]="faTimes"></fa-icon> Deletar

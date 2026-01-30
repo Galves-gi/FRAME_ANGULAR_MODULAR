@@ -16,7 +16,7 @@ import { SharedModule } from "../../shared/shared.module";
     ShareRoutingModule,
     ReactiveFormsModule,
     SharedModule
-],
+  ],
     providers: [
     ShareService
   ]

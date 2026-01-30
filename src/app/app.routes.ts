@@ -10,7 +10,7 @@ export const routes: Routes = [
         loadChildren:()=> import('./features/share/share.module').then(m=> m.ShareModule)
     },
     {
-        path: 'detail/:id',
+        path: 'detail',
         loadChildren:()=> import('./features/photo-detail/photo-detail.module').then(m=> m.PhotoDetailModule)
     },
     {

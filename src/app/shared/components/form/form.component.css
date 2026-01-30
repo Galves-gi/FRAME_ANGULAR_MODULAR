@@ -1,0 +1,54 @@
+/* formulário */
+form {
+    max-width: 45em;
+    margin: 2rem auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+
+    background: var(--cor-branco);
+    color: var(--cor-preto);
+}
+
+.imagem-previa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Label normal */
+form label {
+    font-size: 0.9rem;
+}
+
+/* Textarea */
+form textarea {
+    min-height: 130px;
+    resize: vertical;
+    font-family: inherit;
+}
+
+/* Botão */
+form button {
+    padding: 0.75rem;
+    margin-top: 2em;
+    border: 1px solid var(--cor-preto);
+    background: var(--cor-preto);
+    color: var(--cor-branco);
+    ;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+form button:hover {
+    background: var(--cor-branco-apoio);
+    ;
+    color: var(--cor-preto);
+}
+
+@media (max-width:760px) {
+    form {
+        border: none;
+    }
+}
