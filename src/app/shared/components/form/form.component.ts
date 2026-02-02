@@ -1,30 +1,31 @@
-import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import {Component,Input,Output,EventEmitter,OnChanges,SimpleChanges} from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrl: './form.component.css'
 })
-export class FormComponent implements OnInit {
+export class FormComponent implements OnChanges {
 
   @Input() initialData: any = null;
 
   @Output() formSubmit = new EventEmitter<any>();
 
-  form!: FormGroup;
-  selectedFile!: File | null;
+  form: FormGroup;
+  selectedFile: File | null = null;
 
-  ngOnInit(): void {
-
+  constructor() {
     this.form = new FormGroup({
       text: new FormControl('', Validators.required),
       hashtag: new FormControl('', Validators.required),
       image: new FormControl('', Validators.required)
     });
+  }
 
-    if (this.initialData) {
+  ngOnChanges(changes: SimpleChanges): void { /*  verifica se precisa atualizar os dados */
+
+    if (changes['initialData'] && this.initialData) {
       this.form.patchValue({
         text: this.initialData.text,
         hashtag: this.initialData.hashtag,
@@ -33,25 +34,14 @@ export class FormComponent implements OnInit {
     }
   }
 
-
-  onFileSelected(event: any) {
-    const input = event.target as HTMLInputElement;
-
-    if (input.files && input.files.length > 0) {
-      this.selectedFile = input.files[0];
-    }
-  }
-
   submit() {
     if (this.form.invalid) return;
 
     const payload = this.form.value;
-
     this.formSubmit.emit(payload);
   }
 
   resetForm() {
     this.form.reset();
   }
-
 }

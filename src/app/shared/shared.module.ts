@@ -7,12 +7,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
 import { MessageComponent } from './components/message/message.component';
 import { FormComponent } from './components/form/form.component';
+import { InputComponent } from './components/input/input.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     MessageComponent,
-    FormComponent
+    FormComponent,
+    InputComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +25,8 @@ import { FormComponent } from './components/form/form.component';
   exports:[
     HeaderComponent,
     MessageComponent,
-    FormComponent
+    FormComponent,
+    InputComponent
   ]
 })
 export class SharedModule { }

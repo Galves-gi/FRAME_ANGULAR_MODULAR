@@ -1,0 +1,40 @@
+<h1>(FEAT 04) Input de entrada </h1>
+
+<div class="dropdown">
+
+  <!-- Botão principal -->
+  <button
+    class="dropdown-button"
+    (click)="toggleDropdown()"
+    (keydown)="onKeyDown($event)"
+    type="button"
+    aria-haspopup="listbox"
+    [attr.aria-expanded]="isOpen"
+  >
+    <span>
+      {{ selectedValue || placeholder }}
+    </span>
+
+    <!-- Chevron -->
+    <span class="chevron" [class.open]="isOpen">
+      v
+    </span>
+  </button>
+
+  <!-- Lista -->
+  <ul
+    *ngIf="isOpen"
+    class="dropdown-list"
+    role="listbox"
+  >
+    <li
+      *ngFor="let option of options; let i = index"
+      role="option"
+      [class.focused]="i === focusedIndex"
+      (click)="selectOption(option)"
+    >
+      {{ option }}
+    </li>
+  </ul>
+
+</div>

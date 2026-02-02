@@ -1,8 +1,8 @@
 /* formulário */
 form {
     max-width: 45em;
-    margin: 2rem auto;
-    padding: 2rem;
+    margin: .5rem auto;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     gap: .5rem;

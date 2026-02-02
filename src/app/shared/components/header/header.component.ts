@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FeedService } from '../../../features/feed/services/feed.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,7 @@ import { FeedService } from '../../../features/feed/services/feed.service';
 export class HeaderComponent {
   menuAberto:boolean = false
 
-  constructor(private feedService: FeedService) {}
+  constructor(private feedService: FeedService, private router: Router) {}
 
   ativarMenu(){
     this.menuAberto = !this.menuAberto
@@ -19,5 +20,6 @@ export class HeaderComponent {
     const value = (event.target as HTMLInputElement).value
 
     this.feedService.setSearch(value)
+    this.router.navigate(['/'])
   }
 }

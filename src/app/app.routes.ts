@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 
-export const routes: Routes = [
+export const rotas: Routes = [
     {
         path: '',
         loadChildren:()=> import('./features/feed/feed.module').then(m=> m.FeedModule)

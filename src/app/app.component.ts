@@ -15,4 +15,5 @@ import { ShareModule } from './features/share/share.module';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  frutas = ['Maçã', 'Banana', 'Uva', 'Manga','Maçã', 'Banana', 'Uva', 'Manga'];
 }
