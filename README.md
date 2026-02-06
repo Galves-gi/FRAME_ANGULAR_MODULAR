@@ -130,10 +130,12 @@ As rotas são carregadas utilizando **Lazy Loading**, reduzindo o tempo inicial 
 
 ### 📷 Feed de Fotos
 Exibe todas as fotos cadastradas com visualização rápida e navegação para detalhes.
+---
 ![Imagem de capa](./assets/img-readme/capa.png)
 
 ### ➕ Compartilhar Foto
 Formulário reativo para envio de novas fotos.
+---
 ![Imagem da pagina compartilhar](./assets/img-readme/compartilhar.png)
 
 ### 📝 Detalhe da Foto
@@ -143,12 +145,12 @@ Permite:
 - Editar conteúdo
 - Inserir comentários
 - Excluir registros
-
+---
 ![Imagem da pagina detalhe](./assets/img-readme/detalhe.png)
 
 ### 🔎 Pesquisa Global
 Busca integrada ao cabeçalho compartilhado.
-
+---
 ![Imagem da busca](./assets/img-readme/busca.png)
 
 ---
