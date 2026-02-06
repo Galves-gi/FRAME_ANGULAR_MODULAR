@@ -1,5 +1,6 @@
 import {Component,Input,Output,EventEmitter,OnChanges,SimpleChanges} from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { MessageService } from '../../services/message.service';
 
 @Component({
   selector: 'app-form',
@@ -15,7 +16,7 @@ export class FormComponent implements OnChanges {
   form: FormGroup;
   selectedFile: File | null = null;
 
-  constructor() {
+  constructor(private messageService: MessageService,) {
     this.form = new FormGroup({
       text: new FormControl('', Validators.required),
       hashtag: new FormControl('', Validators.required),
@@ -35,7 +36,11 @@ export class FormComponent implements OnChanges {
   }
 
   submit() {
-    if (this.form.invalid) return;
+  if (this.form.invalid) {
+    this.form.markAllAsTouched(); // mostra erros visuais
+    this.messageService.show('Preencha todos os campos!');
+    return;
+  }
 
     const payload = this.form.value;
     this.formSubmit.emit(payload);

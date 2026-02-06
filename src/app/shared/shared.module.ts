@@ -20,13 +20,14 @@ import { InputComponent } from './components/input/input.component';
     CommonModule,
     RouterModule,
     FontAwesomeModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   exports:[
     HeaderComponent,
     MessageComponent,
     FormComponent,
-    InputComponent
+    InputComponent,
+    MessageComponent
   ]
 })
 export class SharedModule { }

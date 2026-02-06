@@ -1,10 +1,8 @@
 <!-- <h1 class="titulo-centro">Galeria</h1> -->
-
-<section class="galeria">
-
-    <div *ngIf="filteredPhotos.length === 0" class="titulo-centro">
-        Nenhuma imagem emcontrada!
+    <div *ngIf="filteredPhotos.length === 0">
+        <p class="titulo-centro">Nenhuma imagem emcontrada!</p>
     </div>
+<section class="galeria">
     
     <div 
     class="galeria-img" 

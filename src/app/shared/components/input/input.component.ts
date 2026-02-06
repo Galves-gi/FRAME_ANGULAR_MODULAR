@@ -15,7 +15,14 @@ export class InputComponent {
 
   constructor(private elementRef: ElementRef) {}
 
+  @Input() variant: 'badges' | 'experiencia' | 'input' = 'badges';
+  selectedExperience: any = null;
+  isLocked = false; // não deixa abrir depois de selecionar 
+
   toggleDropdown() {
+    if (this.isLocked) {
+      return;
+    }
     this.isOpen = !this.isOpen;
 
     if (this.isOpen) {
@@ -23,10 +30,27 @@ export class InputComponent {
     }
   }
 
-  selectOption(option: string) {
-    this.selectedValue = option;
+  selectOption(option: any) {
+
+    // EXPERIÊNCIA
+    if (this.variant === 'experiencia') {
+      this.selectedExperience = option;
+      this.selectedValue = option.label;
+      
+      this.isLocked = true;
+    }
+
+    // NORMAL / BADGES
+    else {
+      this.selectedValue = option;
+      this.isLocked = true;
+    }
+
+    // fecha dropdown
     this.isOpen = false;
   }
+
+
 
   // Navegação por teclado
   onKeyDown(event: KeyboardEvent) {
@@ -62,11 +86,21 @@ export class InputComponent {
   }
 
   // Fecha ao clicar fora
-  @HostListener('document:click', ['$event'])
+/*   @HostListener('document:click', ['$event'])
   closeOnOutsideClick(event: MouseEvent) {
     if (!this.elementRef.nativeElement.contains(event.target)) {
       this.isOpen = false;
     }
-  }
+  } */
+
+
+    /* niveis de experiencia */
+    niveisExperiencia = [
+      { rating: 1, label: 'Iniciante' },
+      { rating: 2, label: 'Básico' },
+      { rating: 3, label: 'Intermediário' },
+      { rating: 4, label: 'Avançado' },
+      { rating: 5, label: 'Especialista' }
+    ];
 
 }

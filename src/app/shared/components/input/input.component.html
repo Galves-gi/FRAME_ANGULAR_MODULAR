@@ -1,40 +1,96 @@
-<h1>(FEAT 04) Input de entrada </h1>
 
-<div class="dropdown">
+<!-- DROPDOWN / SELECT -->
+<div *ngIf="variant !== 'input'" class="dropdown" [ngClass]="variant">
 
-  <!-- Botão principal -->
-  <button
-    class="dropdown-button"
-    (click)="toggleDropdown()"
-    (keydown)="onKeyDown($event)"
-    type="button"
-    aria-haspopup="listbox"
-    [attr.aria-expanded]="isOpen"
-  >
+  <button class="dropdown-button" type="button" (click)="toggleDropdown()" (keydown)="onKeyDown($event)"
+    aria-haspopup="listbox" [attr.aria-expanded]="isOpen" [class.open]="isOpen" [class.has-selection]="selectedValue"
+    [class.badges-selected]="variant === 'badges' && selectedValue"
+    [class.experiencia-selected]="variant === 'experiencia' && selectedValue" [disabled]="isLocked">
+
     <span>
-      {{ selectedValue || placeholder }}
+
+      <!-- BADGES SELECIONADO -->
+      <ng-container *ngIf="variant === 'badges'">
+
+        <h1>badges</h1>
+
+      </ng-container>
+
+
+      <!-- EXPERIÊNCIA SELECIONADO -->
+      <ng-container *ngIf="variant === 'experiencia'">
+
+        <ng-container *ngIf="selectedExperience; else placeholderText">
+
+          <div class="experiencia__selecionado">
+            <h1>stars</h1>
+
+            <span class="experiencia__nivel">
+              {{ selectedExperience.label }}
+            </span>
+          </div>
+
+        </ng-container>
+
+      </ng-container>
+
+
+      <!-- NORMAL  -->
+      <ng-container *ngIf="variant !== 'badges' && variant !== 'experiencia'">
+
+        {{ selectedValue || placeholder }}
+
+      </ng-container>
+
+
+      <!-- Placeholder padrão -->
+      <ng-template #placeholderText>
+        {{ placeholder }}
+      </ng-template>
+
     </span>
 
-    <!-- Chevron -->
-    <span class="chevron" [class.open]="isOpen">
-      v
+    <!-- Chevron (só aparece se NÃO estiver seleção) -->
+    <span *ngIf="!selectedValue" class="chevron" [class.open]="isOpen">
+      <img src="assets/icons/down.svg" alt="Chevron">
     </span>
+
   </button>
 
-  <!-- Lista -->
-  <ul
-    *ngIf="isOpen"
-    class="dropdown-list"
-    role="listbox"
-  >
-    <li
-      *ngFor="let option of options; let i = index"
-      role="option"
-      [class.focused]="i === focusedIndex"
-      (click)="selectOption(option)"
-    >
-      {{ option }}
-    </li>
+  <!-- LISTA DROPDOWN -->
+  <ul *ngIf="isOpen" class="dropdown-list" role="listbox">
+
+    <!-- VARIANT: EXPERIÊNCIA -->
+    <ng-container *ngIf="variant === 'experiencia'; else normalList">
+
+      <li *ngFor="let nivel of niveisExperiencia" (click)="selectOption(nivel)">
+        <button class="experiencia__botao">
+          <h1>stars {{ nivel.rating }}</h1>
+
+          <span class="experiencia__nivel">
+            {{ nivel.label }}
+          </span>
+        </button>
+
+      </li>
+
+    </ng-container>
+
+    <!-- VARIANT: NORMAL / BADGES -->
+    <ng-template #normalList>
+
+      <li *ngFor="let option of options; let i = index" role="option" [class.focused]="i === focusedIndex"
+        (click)="selectOption(option)">
+
+        <!-- BADGES -->
+        <ng-container *ngIf="variant === 'badges'">
+          
+        </ng-container>
+
+      </li>
+
+    </ng-template>
+
   </ul>
 
 </div>

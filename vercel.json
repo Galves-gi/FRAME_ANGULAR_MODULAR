@@ -1,0 +1,7 @@
+{
+  "outputDirectory": "dist/frame-angular-modular/browser",
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/.*", "dest": "/index.html" }
+  ]
+}

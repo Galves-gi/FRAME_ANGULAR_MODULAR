@@ -1,9 +1,9 @@
 .message {
     position: fixed;
-    bottom:3em;
+    bottom: 3em;
     width: 30%;
     margin-left: 70%;
-    left: 0%;
+    right: 0%;
     z-index: 10;
     background-color: #FFF;
     border-radius: 10px 0 0 10px;
@@ -26,4 +26,14 @@
 
 .message-header p {
     font-size: 1.5em;
+}
+
+/* mobile */
+@media (min-width: 300px) and (max-width: 700px){
+    .message {
+        width: 80vw;
+        margin: 0%;
+        left: 0;
+        border-radius: 0px 10px 10px 0px;
+    }
 }

@@ -1,55 +1,46 @@
-.dropdown {
-  position: relative;
-  width: 220px;
-  font-family: Arial, sans-serif;
-}
-
-.dropdown-button {
-  width: 100%;
-  padding: 10px 12px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  background: white;
-
+.dropdown.badges {
+  position: static !important;
+  overflow: visible !important;
+  width: 156px;
+  min-height: 26px;
+  height: auto;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
 
-  cursor: pointer;
+  background-color: var(--cor-bg-card);
 }
 
-.chevron {
-  transition: transform 0.2s ease;
-}
-
-/* ✅ gira quando abre */
-.chevron.open {
-  transform: rotate(180deg);
-}
-
-.dropdown-list {
-  margin: 6px 0 0;
-  padding: 0;
-  list-style: none;
-
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background: white;
-
-  position: absolute;
+.dropdown.badges .dropdown-button {
   width: 100%;
-  z-index: 10;
-
-  max-height: 160px;
-  overflow-y: auto;
-}
-
-.dropdown-list li {
-  padding: 10px;
   cursor: pointer;
 }
 
-.dropdown-list li:hover,
-.dropdown-list li.focused {
-  background: #f2f2f2;
+.dropdown.badges .dropdown-list {
+  width: 100%;
+  width: 156px;
+  max-height: 192px;
+  display: flex;
+  flex-direction: column;
+  direction: rtl;
+
+  z-index: 10;
+  overflow-y: auto;
+
+
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+}
+
+.dropdown.badges .dropdown-list li {
+  height: 100%;
+  margin: 0;
+  margin-bottom: 13px;
+
+  font-family: var(--fonte-subtitulo-desktop);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--branco);
+
+  cursor: pointer;
+  direction: ltr;
 }

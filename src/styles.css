@@ -1,3 +1,6 @@
+/* FONTE */
+@import url('https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap');
+
 /* ROOT */
 :root {
     --cor-preto: #121212;
@@ -29,9 +32,6 @@ body {
 }
 
 body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-        Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif;
-
     line-height: 1.5;
     background-color: var(--cor-branco);
     color: var(--color-preto);
@@ -84,7 +84,9 @@ h3,
 h4,
 h5,
 h6 {
-    font-weight: inherit;
+    font-family: "Tenor Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 
@@ -102,19 +104,68 @@ select {
 
 
 /* estilo global */
-.mensagem-validacao p{
+.mensagem-validacao p {
     color: rgb(168, 5, 5);
     border-left: 3px solid red;
     padding-left: .5em;
 }
-.titulo-centro{
+
+.titulo-centro {
+    width: 100%;
     text-align: center;
-    margin: 10em;
+    padding: 1em;
 }
 
 
 @media (max-width: 760px) {
-  body {
-    padding-top: 100px;
-  }
+    body {
+        padding-top: 100px;
+    }
+}
+
+/* formulario */
+form {
+    margin: .5rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+
+    background: var(--cor-branco);
+    color: var(--cor-preto);
+}
+
+/* Label normal */
+form label {
+    font-size: 0.9rem;
+}
+
+/* Textarea */
+form textarea {
+    min-height: 130px;
+    resize: vertical;
+    font-family: inherit;
+}
+
+/* Botão */
+form button {
+    padding: 0.75rem;
+    margin-top: 2em;
+    border: 1px solid var(--cor-preto);
+    background: var(--cor-preto);
+    color: var(--cor-branco);
+    ;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+form button:hover {
+    background: var(--cor-branco-apoio);
+    ;
+    color: var(--cor-preto);
+}
+
+@media (max-width:760px) {
+    form {
+        border: none;
+    }
 }

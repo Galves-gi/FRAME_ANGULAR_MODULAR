@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { PhotoDetailRoutingModule } from './photo-detail-routing.module';
 import { PhotoDetailComponent } from './pages/photo-detail/photo-detail.component';
@@ -18,7 +19,8 @@ import { SharedModule } from '../../shared/shared.module';
     CommonModule,
     PhotoDetailRoutingModule,
     FaIconComponent,
-    SharedModule
+    SharedModule,
+    FormsModule
 ]
 })
 export class PhotoDetailModule { }

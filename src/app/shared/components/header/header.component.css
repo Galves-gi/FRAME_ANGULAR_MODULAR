@@ -24,7 +24,9 @@ nav {
     align-items: center;
     gap: 1em;
 }
-
+nav a {
+    font-size: 1.3em;
+}
 nav a:hover,
 nav a:active {
     border-bottom: 2px solid var(--cor-branco);

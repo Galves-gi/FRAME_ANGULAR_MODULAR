@@ -1,27 +1,66 @@
-<section *ngIf="photo" class="foto-detalhe">
+<section *ngIf="photo" class="foto">
+
+  <!-- LADO ESQUERDO -->
+  <article class="foto-detalhe">
 
     <img [src]="photo.image" alt="">
 
-    <div>
-        <a routerLink="/detail/comentario/{{ photo.id }}">
-            <fa-icon [icon]="faComment"></fa-icon> Comentar
-        </a>
+    <div class="acoes">
 
-        <a routerLink="/detail/edit/{{ photo.id }}">
-            <fa-icon [icon]="faEdit"></fa-icon> Editar
-        </a>
-        
+      <button (click)="toggleComments()">
+        <fa-icon [icon]="faComment"></fa-icon> Comentar
+      </button>
 
-        <button (click)="removeHandler(photo.id!)">
-            <fa-icon [icon]="faTimes"></fa-icon> Deletar
-        </button>
+      <a routerLink="/detail/edit/{{ photo.id }}">
+        <fa-icon [icon]="faEdit"></fa-icon> Editar
+      </a>
+
+      <button (click)="removeHandler(photo.id!)">
+        <fa-icon [icon]="faTimes"></fa-icon> Deletar
+      </button>
 
     </div>
 
-
-    <p> {{ photo.text }}
-        <br>
-        <small>{{ photo.hashtag }}</small>
+    <p>
+      {{ photo.text }}
+      <br>
+      <small>{{ photo.hashtag }}</small>
     </p>
+
+  </article>
+
+  <!-- LADO DIREITO — COMENTÁRIOS -->
+  <article *ngIf="showComments" class="comentarios">
+
+    <h3>Comentários</h3>
+
+    <!-- LISTA COM SCROLL -->
+    <div class="lista-comentarios">
+
+      <p *ngIf="photo.comment.length === 0">
+        Nenhum comentário ainda…
+      </p>
+
+      <div *ngFor="let mensagem of photo.comment" class="mensagem">
+        <strong>{{ mensagem.user }}</strong>
+        <p>{{ mensagem.text }}</p>
+      </div>
+
+    </div>
+
+    <!-- FORMULÁRIO -->
+    <form (ngSubmit)="submitComment()" #commentForm="ngForm" class="comentario">
+
+      <input type="text" placeholder="Seu nome" [(ngModel)]="newComment.user" name="user" required>
+
+      <textarea placeholder="Digite seu comentário..." [(ngModel)]="newComment.text" name="text" required></textarea>
+
+      <button type="submit" class="botao-comentario">
+        Enviar
+      </button>
+
+    </form>
+
+  </article>
 
 </section>

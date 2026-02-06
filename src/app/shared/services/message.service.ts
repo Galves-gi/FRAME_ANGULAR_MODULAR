@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,9 +9,15 @@ export class MessageService {
 
   show(text: string) {
     this.message = text;
+
+    // limpa após 2s
+    setTimeout(() => {
+      this.clear();
+    }, 2000);
   }
 
   clear() {
     this.message = null;
   }
+
 }
