@@ -1,6 +1,6 @@
 # Frame – arquitetura modular
 
-Aplicação frontend desenvolvida em **Angular v17**, seguindo **arquitetura modular por feature**, boas práticas de mercado e organização pensada para projetos escaláveis.
+Aplicação frontend desenvolvida em **Angular v17**, seguindo **arquitetura modular**, boas práticas de mercado e organização pensada para projetos escaláveis.
 
 O projeto simula um **feed de fotos**, permitindo visualizar, criar, editar, comentar e excluir fotos, com separação clara de responsabilidades entre módulos.
 
