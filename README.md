@@ -14,7 +14,7 @@ O projeto simula um **feed de fotos**, permitindo visualizar, criar, editar, com
 ![Status](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
 
 ---
-![Imagem de capa](assets/img-readme/capa.png)
+![Imagem de capa](src/assets/img-readme/capa.png)
 ---
 
 ## 📚 Índice
@@ -131,12 +131,12 @@ As rotas são carregadas utilizando **Lazy Loading**, reduzindo o tempo inicial 
 ### 📷 Feed de Fotos
 Exibe todas as fotos cadastradas com visualização rápida e navegação para detalhes.
 ---
-![Imagem de capa](./assets/img-readme/capa.png)
+![Imagem de capa](src/assets/img-readme/capa.png)
 
 ### ➕ Compartilhar Foto
 Formulário reativo para envio de novas fotos.
 ---
-![Imagem da pagina compartilhar](./assets/img-readme/compartilhar.png)
+![Imagem da pagina compartilhar](src/assets/img-readme/compartilhar.png)
 
 ### 📝 Detalhe da Foto
 Permite:
@@ -146,12 +146,12 @@ Permite:
 - Inserir comentários
 - Excluir registros
 ---
-![Imagem da pagina detalhe](./assets/img-readme/detalhe.png)
+![Imagem da pagina detalhe](src/assets/img-readme/detalhe.png)
 
 ### 🔎 Pesquisa Global
 Busca integrada ao cabeçalho compartilhado.
 ---
-![Imagem da busca](./assets/img-readme/busca.png)
+![Imagem da busca](src/assets/img-readme/busca.png)
 
 ---
 
@@ -161,7 +161,6 @@ Busca integrada ao cabeçalho compartilhado.
 |----------|------------|----------|
 | Frontend | Angular 17 | Estrutura principal da aplicação |
 | Linguagem | TypeScript | Tipagem forte e organização |
-| Biblioteca | RxJS | Programação reativa |
 | Roteamento | Angular Router | Navegação entre módulos |
 | Formulários | Reactive Forms | Validação e controle de dados |
 | Interface | HTML5 / CSS3 | Estrutura e estilo |
