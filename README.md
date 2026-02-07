@@ -14,7 +14,7 @@ O projeto simula um **feed de fotos**, permitindo visualizar, criar, editar, com
 ![Status](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
 
 ---
-![Imagem de capa](./assets/img-readme/capa.png)
+![Imagem de capa](assets/img-readme/capa.png)
 ---
 
 ## 📚 Índice
